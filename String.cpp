@@ -1,3 +1,3 @@
 #include "String.h"
 
-int string::max_size;
+const int String::MAX_SIZE_ = 100;

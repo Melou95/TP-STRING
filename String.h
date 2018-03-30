@@ -1,10 +1,10 @@
 /* Déclaration de la classe String */
-class string {
+class String {
   protected :
     char * data_;
     int capacity_;
     int size_;
-    static int max_size;
+    static const int MAX_SIZE_;   //Mot clé const + en majuscule car c'est une constante
   public :
     //Getters
     char * c_str();
@@ -14,15 +14,15 @@ class string {
     int max_size();
     
     //Setters
-    string clear();
-    string resize();
-    string reserve();
+    String clear();
+    String resize();
+    String reserve();
     
     //Constructors
-    string(string obj);
-    string(char * obj);
-    destructor();
+    String(const String* chaine);
+    String(char * obj);
+    ~String();
     
     //Test
-    void empty();
-}
+    bool empty();
+};
