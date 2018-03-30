@@ -15,11 +15,11 @@ class String {
     
     //Setters
     String clear();
-    String resize();
-    String reserve();
+    String resize(int size);
+    String reserve(int capacity);
     
     //Constructors
-    String(const String* chaine);
+    String(const String* obj);
     String(char * obj);
     ~String();
     

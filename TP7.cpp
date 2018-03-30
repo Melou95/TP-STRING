@@ -1,7 +1,12 @@
 #include "String.h"
 #include <iostream>
+using namespace std;
 
 int main(){
-  std::cout<< "Hello World !" <<std::endl;
+  //Vérification de la mise en place de l'environnement
+  cout<< "Hello World !" <<endl;
   return 0;
+  
+  //Vérification du constructeur par copie
+  
 }
