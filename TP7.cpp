@@ -21,6 +21,9 @@ int main(){
   //Vérification du getter max_size
   cout<< s1.max_size() <<endl;
 
+  //Vérification du setter resize
+  s1.resize(2);
+  cout<< s1 <<endl;
 
   return 0;
   

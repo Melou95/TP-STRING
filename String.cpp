@@ -25,7 +25,23 @@ int String::max_size(){
 }
  
 //Setters
- 
+void String::resize(int size){
+	if (size>capacity_-1){
+		cout<< "La chaine de caratère que vous chercher à créer est plus longue que la capacité du tableau : " << cpacity_ <<endl;
+	}
+	else if (size<0){
+		cout<< "La taille que vous donnez en entrée doit être positif."
+	}
+	else {
+		int i=0;
+		while (i < size){
+			i+=1;
+		}
+		data_[i]='\0';
+		size_=size;
+	}
+}
+
 //Constructors 
 
 //Définition du contructeur à partir d'une c-string
