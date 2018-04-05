@@ -19,6 +19,10 @@ int String::length(){
 int String::capacity(){
   return capacity_;
 }
+
+int String::max_size(){
+  return MAX_SIZE_;
+}
  
 //Setters
  
