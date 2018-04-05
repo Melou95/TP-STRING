@@ -10,9 +10,18 @@ int main(){
   char test[4]={'L','o','u','\0'};
   cout<< test <<endl;
   String s1(test);
+  //Vérification du getter c_str
   cout<< s1.c_str() <<endl;
+  //Vérification du getter size
   cout<< s1.size() <<endl;
+  //Vérification du getter length
+  cout<< s1.length() <<endl;
+  //Vérification du getter capacity
   cout<< s1.capacity() <<endl;
+  //Vérification du getter max_size
+  cout<< s1.max_size() <<endl;
+
+
   return 0;
   
   //Vérification du constructeur par copie
