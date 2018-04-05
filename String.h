@@ -20,8 +20,8 @@ class String {
     
     //Constructors
     String(const String* obj);
-    String(char * obj);
-    ~String();
+    String(const char * obj);
+    // ~String();
     
     //Test
     bool empty();
