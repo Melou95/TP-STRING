@@ -12,6 +12,10 @@ int String::size(){
   return size_;
 }
 
+int String::length(){
+  return size_;
+}
+
 int String::capacity(){
   return capacity_;
 }
