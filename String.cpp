@@ -117,4 +117,14 @@ String::String(const String* obj){
 
 // Définition de l'opérateur "="
 
+void String::operator= (char carac){
+	char* c_string=new char[2];
+	c_string[0]=carac;
+	c_string[1]='\0';
+	delete data_;
+	data_=c_string;
+	size_=1;
+	capacity_=2;
+}
+
 // Définition de l'opérateur "+"

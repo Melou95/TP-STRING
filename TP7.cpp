@@ -44,6 +44,12 @@ int main(){
   String s2(test2);
   s2.resize(103,'.');
 
+  // Pour tester l'opérateur "="
+  s2 = 'A';
+  cout<< s2.c_str() <<endl;
+  cout<< s2.length() <<endl;
+  cout<< s2.capacity() <<endl;
+
   return 0;
   
   //Vérification du constructeur par copie
