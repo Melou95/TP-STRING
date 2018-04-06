@@ -27,18 +27,25 @@ int String::max_size(){
 //Setters
 void String::resize(int size, char carac){
 	if (size>capacity_-1){
-		char * c_string=new char[size+1];
-		for (int i=0; i<=size_; ++i){
-			c_string[i]=data_[i];
+		if (size>MAX_SIZE_){
+			char * c_string=new char[size+1];
+			for (int i=0; i<=size_; ++i){
+				c_string[i]=data_[i];
+			}
+			for (int j=size_; j<=size; ++j){
+				c_string[j]=data_[j];
+			}
+			c_string[size+1]='\0';
+			delete data_;
+			data_=c_string;
+			size_=size;
+			capacity_=size+1;
 		}
-		for (int j=size_; j<=size; ++j){
-			c_string[j]=data_[j];
+		else {
+			cout<< "L'entier donné en entrée est plus grand que l'espace maximum qui peut être alloué à une chaine de caractère."<<endl;
+			cout<< "Veuillez entrer un entier inférieur à : " << MAX_SIZE_ <<endl;
 		}
-		c_string[size+1]='\0';
-		delete data_;
-		data_=c_string;
-		size_=size;
-		capacity_=size+1;
+		
 	}
 	else {
 		if (size<0){

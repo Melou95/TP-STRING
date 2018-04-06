@@ -38,6 +38,12 @@ int main(){
   s1.resize(-2,'O');
   cout<< s1.c_str() <<endl;
 
+  // Pour tester la prise en compte de MAX_SIZE_
+  char test2[5]={'T','e','s','t','\0'};
+  cout<< test2 <<endl;
+  String s2(test2);
+  s2.resize(103,'.');
+
   return 0;
   
   //Vérification du constructeur par copie
