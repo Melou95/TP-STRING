@@ -16,6 +16,7 @@ class String {
     //Setters
     String clear();
     void resize(int size);
+    void resize(int size, char carac);
     String reserve(int capacity);
     
     //Constructors

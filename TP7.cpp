@@ -21,9 +21,22 @@ int main(){
   //Vérification du getter max_size
   cout<< s1.max_size() <<endl;
 
-  //Vérification du setter resize
+  //Vérification des setters resize
   s1.resize(2);
-  cout<< s1 <<endl;
+  cout<< s1.c_str() <<endl;
+  s1.resize(-1);
+  cout<< s1.c_str() <<endl;
+  s1.resize(70);
+  cout<< s1.c_str() <<endl;
+
+  s1.resize(3,'u');
+  cout<< s1.c_str() <<endl;
+  s1.resize(4,'i');
+  cout<< s1.c_str() <<endl;
+  s1.resize(2,'L');
+  cout<< s1.c_str() <<endl;
+  s1.resize(-2,'O');
+  cout<< s1.c_str() <<endl;
 
   return 0;
   

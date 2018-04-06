@@ -25,17 +25,54 @@ int String::max_size(){
 }
  
 //Setters
-void String::resize(int size){
+void String::resize(int size, char carac){
 	if (size>capacity_-1){
-		cout<< "La chaine de caratère que vous chercher à créer est plus longue que la capacité du tableau : " << cpacity_ <<endl;
+		char * c_string=new char[size+1];
+		for (int i=0; i<=size_; ++i){
+			c_string[i]=data_[i];
+		}
+		for (int j=size_; j<=size; ++j){
+			c_string[j]=data_[j];
+		}
+		c_string[size+1]='\0';
+		delete data_;
+		data_=c_string;
+		size_=size;
+		capacity_=size+1;
+	}
+	else {
+		if (size<0){
+			cout<< "La taille que vous donnez en entrée doit être positive."<<endl;
+		}
+		else if (size<size_){
+			cout<< "L'entier entré en paramètre est plus petit que la taille de la chaine de caractère."<<endl;
+			cout<< "Veuillez rentrer un entier plus grand que : " << size_ <<endl;
+		}
+		else {
+			int i=size_;
+			while (i < size){
+				data_[i]=carac;
+				++i;
+			}
+			data_[i]='\0';
+			size_=size;
+		}
+	}
+}
+
+void String::resize(int size){
+	if (size>size_){
+		cout<< "La chaine de caratère que vous chercher à créer est plus longue que la chaine existante" <<endl;
+		cout<< "Veuillez choisir une taille inferieure à la taille de la chaine actuelle " << size_ <<endl;
+		cout<< "Ou choisir un caractère à ajouter à la chaine de caratère existance" <<endl;
 	}
 	else if (size<0){
-		cout<< "La taille que vous donnez en entrée doit être positif."
+		cout<< "La taille que vous donnez en entrée doit être positif." <<endl;
 	}
 	else {
 		int i=0;
 		while (i < size){
-			i+=1;
+			++i;
 		}
 		data_[i]='\0';
 		size_=size;
@@ -48,7 +85,7 @@ void String::resize(int size){
 String::String(const char* obj){
 	int taille=0;
 	while (obj[taille]!='\0'){
-		taille+=1;
+		++taille;
 	}
 	char * c_string=new char[taille+1];
 	for (int i=0; i<=taille; i++){
@@ -68,4 +105,9 @@ String::String(const String* obj){
 }*/
   
 //Test
-  
+
+// Opérators
+
+// Définition de l'opérateur "="
+
+// Définition de l'opérateur "+"
