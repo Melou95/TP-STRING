@@ -1,17 +1,17 @@
 /* Déclaration de la classe String */
 class String {
-  protected :
+    protected :
     char * data_;
     int capacity_;
     int size_;
     static const int MAX_SIZE_;   //Mot clé const + en majuscule car c'est une constante
-  public :
+    public :
     //Getters
     char * c_str();
-    int size();
-    int length();
-    int capacity();
-    int max_size();
+    int size() /*const noexept*/;
+    int length() /*const noexept*/;
+    int capacity() /*const noexept*/;
+    int max_size() /*const noexept*/;
     
     //Setters
     String clear();
@@ -24,6 +24,10 @@ class String {
     String(const char * obj);
     // ~String();
     
+    //Operators
+    void operator = (char carac);
+    
     //Test
     bool empty();
 };
+
