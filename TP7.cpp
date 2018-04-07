@@ -54,9 +54,24 @@ int main(){
     cout<< "La chaine contenue dans la string s2 est maintenant : " << s2.c_str() <<endl;
     cout<< "La longeur de cette chaine est : " << s2.length() <<endl;
     cout<< "La taille du tableau la contenant est : " << s2.capacity() <<endl;
+    cout<< " " <<endl;
+    
+    // Pour tester l'opérateur "+"
+    s2 = 'A';
+    cout<< "La chaine contenue dans la string s2 est : " << s2.c_str() <<endl;
+    char ajout[7]={'r','l','e','t','t','e'};
+    cout<< "On lui ajoute la chaine ajout : " << ajout <<endl;
+    cout<< "La chaine devient : " << (s2 + ajout).c_str() <<endl;
+    cout<< "La longeur de cette chaine devrait être : 7."<<endl;
+    cout<< "La longeur de cette chaine est : " << (s2 + ajout).length() <<endl;
+    cout<< "La taille du tableau la contenant devrait être : 8."<<endl;
+    cout<< "La taille du tableau la contenant est : " << (s2 + ajout).capacity() <<endl;
+    cout<< " " <<endl;
+    cout<< " " <<endl;
     
     return 0;
     
     //Vérification du constructeur par copie
     
 }
+

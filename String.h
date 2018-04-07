@@ -26,8 +26,11 @@ class String {
     
     //Operators
     void operator = (char carac);
+    friend String operator + (String s, char * chaine);
     
     //Test
     bool empty();
 };
+
+String operator + (String s, char * chaine);
 
