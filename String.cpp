@@ -251,8 +251,24 @@ String operator + (String s, char * chaine){
 
 // Définition de l'opérateur "+" pour string
 
+String operator + (const String& st1, const String& st2){
+  int taille = st1.size_ + st2.size_ + 1;
+  char * c_string = new char[taille];
+  for (int i=0; i<st1.size_;++i){
+    c_string[i]=st1.data_[i];
+  }
+  for (int j=st1.size_; j<=taille-1; ++j){
+    c_string[j]=st2.data_[j-st1.size_];
+  }
+  c_string[taille-1]='\0';
+  String str_somme(c_string);
+  return (str_somme);
+}
+
 /*Destructor
 String::~String(){
   delete[] data_;
-}*/
+}
+Je (Matthieu) n'ai pas réussi à faire fonctionner le destructor qui me crée toujours des erreurs de segmentation.
+*/
 
