@@ -14,13 +14,13 @@ class String {
     int max_size() /*const noexcept*/;
     
     //Setters
-    String clear();
+    void clear();
     void resize(int size);
     void resize(int size, char carac);
     String reserve(int capacity);
     
     //Constructors
-    String(const String* obj);
+    String(const String& obj);
     String(const char * obj);
     //~String();
     

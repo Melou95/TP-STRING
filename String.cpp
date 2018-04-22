@@ -121,12 +121,27 @@ String::String(const char* obj){
     capacity_=taille+1;
 }
 
-/*//Définition du constructeur par copie
- String::String(const String* obj){
+//Définition du constructeur par copie
+ String::String(const String& obj){
  int longueur;
- longueur=obj->size();
- String* obj = new String* chaine
- }*/
+ longueur=obj.size_;
+ char * chaine = new char[longueur+1];
+ int i;
+ for (i=0;i<longueur;++i){
+  chaine[i] = obj.data_[i];
+ }
+ chaine[longueur+1]='\0';
+ data_=chaine;
+ size_=obj.size_;
+ capacity_=obj.capacity_;
+}
+
+
+//Méthode clear
+void String::clear(){
+  data_[0]='\0';
+  size_=0;
+}
 
 //Test
 
