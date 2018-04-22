@@ -156,6 +156,7 @@ bool String::empty(){
 
 // Opérators
 
+
 // Définition de l'opérateur "=" avec une string
 String& String::operator=(const String& obj){
   delete data_;
@@ -182,13 +183,14 @@ String operator+(const String& obj1, char obj2){
     str_finale.data_[str_finale.size_+1]='\0';
   }
   else{
-    str_finale.reserve(str_finale.size_+1);
+    str_finale.reserve(str_finale.size_+2);
     str_finale.size_=str_finale.size_+1;
-    str_finale.data_[str_finale.size_]=obj2;
-    str_finale.data_[str_finale.size_+1]='\0';
+    str_finale.data_[str_finale.size_-1]=obj2;
+    str_finale.data_[str_finale.size_]='\0';
   }
   return str_finale;
 }
+  
 
 // Définition de l'opérateur "=" pour char
 
@@ -248,20 +250,6 @@ String operator + (String s, char * chaine){
 }
 
 // Définition de l'opérateur "+" pour string
-
-String operator + (const String& st1, const String& st2){
-  int taille = st1.size_ + st2.size_ + 1;
-  char * c_string = new char[taille];
-  for (int i=0; i<st1.size_;++i){
-    c_string[i]=st1.data_[i];
-  }
-  for (int j=st1.size_; j<=taille-1; ++j){
-    c_string[j]=st2.data_[j-st1.size_];
-  }
-  c_string[taille-1]='\0';
-  String str_somme(c_string);
-  return (str_somme);
-}
 
 /*Destructor
 String::~String(){
