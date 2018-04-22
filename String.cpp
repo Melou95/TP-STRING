@@ -124,7 +124,7 @@ String::String(const char* obj){
 //Test
 
 bool String::empty(){
-  if (this->data_=='\0'){
+  if (this -> data_[0]=='\0'){
     return true;
   }
   else {

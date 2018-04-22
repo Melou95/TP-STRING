@@ -8,10 +8,10 @@ class String {
     public :
     //Getters
     char * c_str();
-    int size() /*const noexept*/;
-    int length() /*const noexept*/;
-    int capacity() /*const noexept*/;
-    int max_size() /*const noexept*/;
+    int size() /*const noexcept*/;
+    int length() /*const noexcept*/;
+    int capacity() /*const noexcept*/;
+    int max_size() /*const noexcept*/;
     
     //Setters
     String clear();
