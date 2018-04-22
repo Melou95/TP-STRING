@@ -89,13 +89,18 @@ void String::resize(int size){
 }
 
 String String::reserve(int capacity){
-  this -> capacity_=capacity;
-  char * tab = new char [capacity];
-  for (int i=0; i<=size_; ++i){
-                tab[i]=data_[i];
-            }
-  delete this -> data_;
-  this -> data_ = tab;
+  if (capacity<=MAX_SIZE_){
+    this -> capacity_=capacity;
+    char * tab = new char [capacity];
+    for (int i=0; i<=size_; ++i){
+                  tab[i]=data_[i];
+              }
+    delete this -> data_;
+    this -> data_ = tab;
+  }
+  else {
+    cout<< "Impossible de donner une capacité plus grande que la capacité maximale "<<endl;
+  }
 }
 
 //Constructors
@@ -151,6 +156,7 @@ bool String::empty(){
 
 // Opérators
 
+<<<<<<< HEAD
 // Définition de l'opérateur "=" avec une string
 String& String::operator=(const String& obj){
   delete data_;
@@ -187,6 +193,9 @@ String operator+(const String& obj1, char obj2){
   
 
 // Définition de l'opérateur "="
+=======
+// Définition de l'opérateur "=" pour char
+>>>>>>> 2f827e3f5e46e875125ec9d7e701c5a23a9d2108
 
 void String::operator = (char carac){
     char* c_string=new char[2];
@@ -199,7 +208,12 @@ void String::operator = (char carac){
     
 }
 
-// Définition de l'opérateur "+"
+// Définition de l'opérateur "=" pour char *
+
+void String::operator = (char * tab){
+    
+
+// Définition de l'opérateur "+" pour char *
 
 String operator + (String s, char * chaine){
     String s1(s.c_str());
@@ -222,8 +236,10 @@ String operator + (String s, char * chaine){
     return (s1);
 }
 
+// Définition de l'opérateur "+" pour string
+
 /*Destructor
 String::~String(){
-  delete this -> data_;
+  delete[] data_;
 }*/
 
