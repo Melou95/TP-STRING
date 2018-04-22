@@ -89,9 +89,29 @@ int main(){
     cout<< " " <<endl;
     cout<< " " <<endl;
     
+      
+    
+    // Pour tester l'opérateur "=" avec une String
+    String s3(test);
+    cout<< "La string s3 est : " << s3.c_str() <<endl;
+    cout<< "Sa taille est : " << s3.size() <<endl;
+    String s4 = s3;
+    cout<< "La string s4 est : " << s4.c_str() <<endl;
+    cout<< "Sa taille est : " << s4.size() <<endl;
+    
+     // Pour tester le constructeur par copie
+     String s5(s3);
+     cout<< "La string s5 est : " << s5.c_str() <<endl;
+     cout<< "Sa taille est : " << s5.size() <<endl;
+    
+    // Pour tester l'opérateur "+" avec un char
+    String s6=s3+'a';
+    cout<< "La string s6 est : " << s6.c_str() <<endl;
+    cout<< "Sa taille est : " << s6.size() <<endl;
+    
     return 0;
     
-    //Vérification du constructeur par copie
+    
     
 }
 
