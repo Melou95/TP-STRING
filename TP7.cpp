@@ -75,6 +75,13 @@ int main(){
     cout<< "La longeur de cette chaine est : " << s2.length() <<endl;
     cout<< "La taille du tableau la contenant est : " << s2.capacity() <<endl;
     cout<< " " <<endl;
+
+    // Pour tester l'opérateur "=" pour char *
+    String s3 = "lalalala";
+    cout<< "La chaine contenue dans la string s3 est maintenant : " << s3.c_str() <<endl;
+    cout<< "La longeur de cette chaine est : " << s3.length() <<endl;
+    cout<< "La taille du tableau la contenant est : " << s3.capacity() <<endl;
+    cout<< " " <<endl;
     
     // Pour tester l'opérateur "+" pour char*
     s2 = 'A';

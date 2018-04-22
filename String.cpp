@@ -171,8 +171,26 @@ void String::operator = (char carac){
 
 // Définition de l'opérateur "=" pour char *
 
-void String::operator = (char * tab){
-    
+//Définition de l'opérateur =(char*)
+
+String& String::operator= (const char* c_string){
+  int s = 0;
+  while(c_string[s] != '\0')
+  {
+    ++s;
+  }
+  int length_ = s; 
+  if(length_ >= capacity_){
+    capacity_ = length_ +1;
+  }
+  char* str;
+  str = new char[capacity_];
+  for(int i = 0; i < length_; ++i){
+    str[i] = c_string[i];
+  }
+  str[length_] = '\0';
+  return *this;    
+}
 
 // Définition de l'opérateur "+" pour char *
 
