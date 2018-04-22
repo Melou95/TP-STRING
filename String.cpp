@@ -89,9 +89,11 @@ void String::resize(int size){
 }
 
 String String::reserve(int capacity){
-  capacity_=capacity;
+  this -> capacity_=capacity;
   char * tab = new char [capacity];
-  tab = this->data_;
+  for (int i=0; i<=size_; ++i){
+                tab[i]=data_[i];
+            }
   delete this -> data_;
   this -> data_ = tab;
 }
