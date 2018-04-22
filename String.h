@@ -25,6 +25,8 @@ class String {
     //~String();
     
     //Operators
+    String& operator=(const String& obj);
+    friend String operator+(const String& obj1, char obj2);
     void operator = (char carac);
     friend String operator + (String s, char * chaine);
     String& operator= (const char* c_string);
@@ -33,5 +35,6 @@ class String {
     bool empty();
 };
 
+String operator+(const String& obj1, char obj2);
 String operator + (String s, char * chaine);
 

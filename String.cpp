@@ -156,7 +156,46 @@ bool String::empty(){
 
 // Opérators
 
+<<<<<<< HEAD
+// Définition de l'opérateur "=" avec une string
+String& String::operator=(const String& obj){
+  delete data_;
+  size_=obj.size_;
+  capacity_=obj.capacity_;
+  char * chaine = new char[size_+1];
+  int i;
+  for (i=0;i<size_;++i){
+   chaine[i] = obj.data_[i];
+  }
+  chaine[size_+1]='\0';
+  data_=chaine;
+  return *this;
+}
+
+
+// Définition de l'opérateur "+" avec un char
+
+String operator+(const String& obj1, char obj2){
+  String str_finale(obj1);
+  if (obj1.capacity_ >= obj1.size_+2){
+    str_finale.size_=str_finale.size_+1;
+    str_finale.data_[str_finale.size_]=obj2;
+    str_finale.data_[str_finale.size_+1]='\0';
+  }
+  else{
+    str_finale.reserve(str_finale.size_+1);
+    str_finale.size_=str_finale.size_+1;
+    str_finale.data_[str_finale.size_]=obj2;
+    str_finale.data_[str_finale.size_+1]='\0';
+  }
+  return str_finale;
+}
+  
+
+// Définition de l'opérateur "="
+=======
 // Définition de l'opérateur "=" pour char
+>>>>>>> 2f827e3f5e46e875125ec9d7e701c5a23a9d2108
 
 void String::operator = (char carac){
     char* c_string=new char[2];
