@@ -156,7 +156,6 @@ bool String::empty(){
 
 // Opérators
 
-<<<<<<< HEAD
 // Définition de l'opérateur "=" avec une string
 String& String::operator=(const String& obj){
   delete data_;
@@ -190,12 +189,8 @@ String operator+(const String& obj1, char obj2){
   }
   return str_finale;
 }
-  
 
-// Définition de l'opérateur "="
-=======
 // Définition de l'opérateur "=" pour char
->>>>>>> 2f827e3f5e46e875125ec9d7e701c5a23a9d2108
 
 void String::operator = (char carac){
     char* c_string=new char[2];
@@ -208,9 +203,7 @@ void String::operator = (char carac){
     
 }
 
-// Définition de l'opérateur "=" pour char *
-
-//Définition de l'opérateur =(char*)
+//Définition de l'opérateur = (char*)
 
 String& String::operator= (const char* c_string){
   int s = 0;
@@ -255,6 +248,20 @@ String operator + (String s, char * chaine){
 }
 
 // Définition de l'opérateur "+" pour string
+
+String operator + (const String& st1, const String& st2){
+  int taille = st1.size_ + st2.size_ + 1;
+  char * c_string = new char[taille];
+  for (int i=0; i<st1.size_;++i){
+    c_string[i]=st1.data_[i];
+  }
+  for (int j=st1.size_; j<=taille-1; ++j){
+    c_string[j]=st2.data_[j-st1.size_];
+  }
+  c_string[taille-1]='\0';
+  String str_somme(c_string);
+  return (str_somme);
+}
 
 /*Destructor
 String::~String(){

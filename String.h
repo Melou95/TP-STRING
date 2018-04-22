@@ -30,6 +30,7 @@ class String {
     void operator = (char carac);
     friend String operator + (String s, char * chaine);
     String& operator= (const char* c_string);
+    friend String operator + (const String& st1, const String& st2);
     
     //Test
     bool empty();
