@@ -22,7 +22,7 @@ class String {
     //Constructors
     String(const String* obj);
     String(const char * obj);
-    // ~String();
+    //~String();
     
     //Operators
     void operator = (char carac);

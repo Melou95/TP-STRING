@@ -88,6 +88,14 @@ void String::resize(int size){
     }
 }
 
+String String::reserve(int capacity){
+  capacity_=capacity;
+  char * tab = new char [capacity];
+  tab = this->data_;
+  delete this -> data_;
+  this -> data_ = tab;
+}
+
 //Constructors
 
 //Définition du contructeur à partir d'une c-string
@@ -114,6 +122,15 @@ String::String(const char* obj){
  }*/
 
 //Test
+
+bool String::empty(){
+  if (this->data_=='\0'){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 // Opérators
 
@@ -152,4 +169,9 @@ String operator + (String s, char * chaine){
     s1.capacity_+=taille;
     return (s1);
 }
+
+/*Destructor
+String::~String(){
+  delete this -> data_;
+}*/
 
