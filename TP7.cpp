@@ -6,7 +6,7 @@ int main(){
     //Vérification de la mise en place de l'environnement
     cout<< "Hello World !" <<endl;
     cout<< " " <<endl;
-    
+
     //Vérification du constructeur à partir d'une c-string
     char test[4]={'L','o','u','\0'};
     cout<< "La chaine test est : " << test <<endl;
@@ -21,6 +21,15 @@ int main(){
     cout<< "La taille du tableau contenant la chaine s1 est : " << s1.capacity() <<endl;
     //Vérification du getter max_size
     cout<< "La taille maximale d'une chaine est : " <<s1.max_size() <<endl;
+    cout<< " " <<endl;
+  
+    //Vérification de empty
+    char test_emp[2]={'\0'};
+    String s_emp(test_emp);
+    cout<< "La string s_emp contient la chaine : " << s_emp.c_str() <<endl;
+    cout<<"La chaine de s_emp est vide ? (Explication : 1 la chaine est vide, 0 elle n'est pas vide) : " << s_emp.empty() <<endl;
+    cout<< "La string s1 contient la chaine : " << s1.c_str() <<endl;
+    cout<<"La chaine de s1 est vide ? (Explication : 1 la chaine est vide, 0 elle n'est pas vide) : " << s1.empty() <<endl;
     cout<< " " <<endl;
     
     //Vérification des setters resize
@@ -49,14 +58,25 @@ int main(){
     s2.resize(103,'.');
     cout<< " " <<endl;
     
-    // Pour tester l'opérateur "="
+    //Vérification de reserve
+    cout<< "La taille du tableau contenant la chaine s1 est : " << s1.capacity() <<endl;
+    cout<< "La chaine s1 est : " << s1.c_str() <<endl;
+    s1.reserve(70);
+    cout<< "La taille du tableau contenant la chaine s1 est : " << s1.capacity() <<endl;
+    cout<< "La chaine s1 reste inchangée : " << s1.c_str() <<endl;
+    s1.resize(69,'a');
+    cout<< "La chaine s1 à laquelle on rajoute des 'a' jusqu'à la taille 69 devient : " << s1.c_str() <<endl;
+    s1.reserve(170);
+    cout<< " " <<endl;
+
+    // Pour tester l'opérateur "=" pour char
     s2 = 'A';
     cout<< "La chaine contenue dans la string s2 est maintenant : " << s2.c_str() <<endl;
     cout<< "La longeur de cette chaine est : " << s2.length() <<endl;
     cout<< "La taille du tableau la contenant est : " << s2.capacity() <<endl;
     cout<< " " <<endl;
     
-    // Pour tester l'opérateur "+"
+    // Pour tester l'opérateur "+" pour char*
     s2 = 'A';
     cout<< "La chaine contenue dans la string s2 est : " << s2.c_str() <<endl;
     char ajout[7]={'r','l','e','t','t','e'};
